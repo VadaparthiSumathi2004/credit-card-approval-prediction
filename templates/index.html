@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Credit Eligibility Estimator</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="shell">
+    <section class="card">
+      <nav class="topnav"><a href="/">Predict</a><a href="/dashboard">Model dashboard</a></nav>
+      <div class="brand"><span class="icon">▣</span><div><p class="eyebrow">SMART FINANCE · ML DEMO</p><h1>Credit eligibility estimator</h1><p class="sub">Enter the applicant's financial and employment details.</p></div></div>
+      <form id="predictionForm">
+        <div class="grid">
+          <label>Annual income<input name="Income" type="number" min="0" step="any" placeholder="e.g. 50000" required></label>
+          <label>Total debt<input name="Debt" type="number" min="0" step="any" placeholder="e.g. 1200" required></label>
+          <label>Years employed<input name="YearsEmployed" type="number" min="0" step="any" placeholder="e.g. 4.5" required></label>
+          <label>Credit score / history value<input name="CreditScore" type="number" min="0" step="any" placeholder="Use dataset scale" required></label>
+          <label>Industry<select name="Industry" required>
+            <option value="">Choose industry</option><option>CommunicationServices</option><option>ConsumerDiscretionary</option><option>ConsumerStaples</option><option>Education</option><option>Energy</option><option>Financials</option><option>Healthcare</option><option>Industrials</option><option>InformationTechnology</option><option>Materials</option><option>Real Estate</option><option>Research</option><option>Transport</option><option>Utilities</option>
+          </select></label>
+          <label>Existing bank customer<select name="BankCustomer"><option value="1">Yes</option><option value="0">No</option></select></label>
+          <label>Prior default recorded?<select name="PriorDefault"><option value="1">No prior default (1)</option><option value="0">Prior default (0)</option></select></label>
+          <label>Currently employed?<select name="Employed"><option value="1">Yes</option><option value="0">No</option></select></label>
+        </div>
+        <button id="submitBtn" type="submit">Check eligibility <span>→</span></button>
+      </form>
+      <section class="batch-panel">
+        <h2>Batch screening (CSV)</h2>
+        <p>Upload up to 1,000 rows with the same input columns used above. A result CSV will be downloaded.</p>
+        <form id="batchForm" enctype="multipart/form-data"><input type="file" name="file" accept=".csv" required><button type="submit" class="secondary">Upload and predict</button></form>
+        <p id="batchMessage" role="status"></p>
+      </section>
+      <div id="result" class="result" role="status" aria-live="polite" hidden></div>
+      <p class="note">This is an academic demonstration using a small historical dataset. It must not be used to approve or reject real credit applications.</p>
+    </section>
+    <footer>Machine learning classification · Flask web application</footer>
+  </main>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body></html>
