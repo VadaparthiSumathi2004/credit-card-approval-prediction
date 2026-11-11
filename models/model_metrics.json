@@ -1,0 +1,198 @@
+{
+  "best_model": "Logistic Regression",
+  "selection_metric": "ROC-AUC (F1 tie-breaker)",
+  "target_mapping": {
+    "0": "Rejected",
+    "1": "Approved"
+  },
+  "features": [
+    "Debt",
+    "BankCustomer",
+    "YearsEmployed",
+    "PriorDefault",
+    "Employed",
+    "CreditScore",
+    "Income",
+    "Industry"
+  ],
+  "test_rows": 138,
+  "dataset_rows": 690,
+  "results": {
+    "Logistic Regression": {
+      "accuracy": 0.8841,
+      "precision": 0.8462,
+      "recall": 0.9016,
+      "f1": 0.873,
+      "roc_auc": 0.9551,
+      "confusion_matrix": [
+        [
+          67,
+          10
+        ],
+        [
+          6,
+          55
+        ]
+      ],
+      "classification_report": {
+        "Rejected": {
+          "precision": 0.9178082191780822,
+          "recall": 0.8701298701298701,
+          "f1-score": 0.8933333333333333,
+          "support": 77.0
+        },
+        "Approved": {
+          "precision": 0.8461538461538461,
+          "recall": 0.9016393442622951,
+          "f1-score": 0.873015873015873,
+          "support": 61.0
+        },
+        "accuracy": 0.8840579710144928,
+        "macro avg": {
+          "precision": 0.8819810326659642,
+          "recall": 0.8858846071960826,
+          "f1-score": 0.8831746031746032,
+          "support": 138.0
+        },
+        "weighted avg": {
+          "precision": 0.8861349093630213,
+          "recall": 0.8840579710144928,
+          "f1-score": 0.8843524269611226,
+          "support": 138.0
+        }
+      }
+    },
+    "Decision Tree": {
+      "accuracy": 0.8696,
+      "precision": 0.8644,
+      "recall": 0.8361,
+      "f1": 0.85,
+      "roc_auc": 0.9551,
+      "confusion_matrix": [
+        [
+          69,
+          8
+        ],
+        [
+          10,
+          51
+        ]
+      ],
+      "classification_report": {
+        "Rejected": {
+          "precision": 0.8734177215189873,
+          "recall": 0.8961038961038961,
+          "f1-score": 0.8846153846153846,
+          "support": 77.0
+        },
+        "Approved": {
+          "precision": 0.864406779661017,
+          "recall": 0.8360655737704918,
+          "f1-score": 0.85,
+          "support": 61.0
+        },
+        "accuracy": 0.8695652173913043,
+        "macro avg": {
+          "precision": 0.8689122505900022,
+          "recall": 0.866084734937194,
+          "f1-score": 0.8673076923076923,
+          "support": 138.0
+        },
+        "weighted avg": {
+          "precision": 0.8694346240310439,
+          "recall": 0.8695652173913043,
+          "f1-score": 0.869314381270903,
+          "support": 138.0
+        }
+      }
+    },
+    "Random Forest": {
+      "accuracy": 0.8623,
+      "precision": 0.875,
+      "recall": 0.8033,
+      "f1": 0.8376,
+      "roc_auc": 0.954,
+      "confusion_matrix": [
+        [
+          70,
+          7
+        ],
+        [
+          12,
+          49
+        ]
+      ],
+      "classification_report": {
+        "Rejected": {
+          "precision": 0.8536585365853658,
+          "recall": 0.9090909090909091,
+          "f1-score": 0.8805031446540881,
+          "support": 77.0
+        },
+        "Approved": {
+          "precision": 0.875,
+          "recall": 0.8032786885245902,
+          "f1-score": 0.8376068376068376,
+          "support": 61.0
+        },
+        "accuracy": 0.8623188405797102,
+        "macro avg": {
+          "precision": 0.8643292682926829,
+          "recall": 0.8561847988077496,
+          "f1-score": 0.8590549911304628,
+          "support": 138.0
+        },
+        "weighted avg": {
+          "precision": 0.8630920820077767,
+          "recall": 0.8623188405797102,
+          "f1-score": 0.8615417335679846,
+          "support": 138.0
+        }
+      }
+    },
+    "XGBoost": {
+      "accuracy": 0.8696,
+      "precision": 0.8525,
+      "recall": 0.8525,
+      "f1": 0.8525,
+      "roc_auc": 0.9521,
+      "confusion_matrix": [
+        [
+          68,
+          9
+        ],
+        [
+          9,
+          52
+        ]
+      ],
+      "classification_report": {
+        "Rejected": {
+          "precision": 0.8831168831168831,
+          "recall": 0.8831168831168831,
+          "f1-score": 0.8831168831168831,
+          "support": 77.0
+        },
+        "Approved": {
+          "precision": 0.8524590163934426,
+          "recall": 0.8524590163934426,
+          "f1-score": 0.8524590163934426,
+          "support": 61.0
+        },
+        "accuracy": 0.8695652173913043,
+        "macro avg": {
+          "precision": 0.8677879497551628,
+          "recall": 0.8677879497551628,
+          "f1-score": 0.8677879497551628,
+          "support": 138.0
+        },
+        "weighted avg": {
+          "precision": 0.8695652173913043,
+          "recall": 0.8695652173913043,
+          "f1-score": 0.8695652173913043,
+          "support": 138.0
+        }
+      }
+    }
+  }
+}
